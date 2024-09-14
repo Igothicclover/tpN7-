@@ -1,0 +1,9 @@
+SELECT name
+FROM category
+WHERE category_id = (
+  SELECT category_id
+  FROM film_category
+  GROUP BY category_id
+  ORDER BY COUNT(film_id) ASC
+  LIMIT 1
+);

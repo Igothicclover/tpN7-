@@ -1,0 +1,7 @@
+SELECT address.address
+FROM store
+JOIN staff ON store.store_id = staff.store_id
+JOIN address ON store.address_id = address.address_id
+GROUP BY store.store_id, address.address
+ORDER BY COUNT(staff_id) DESC
+LIMIT 1;

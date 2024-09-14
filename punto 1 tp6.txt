@@ -1,0 +1,6 @@
+SELECT title,release_year
+from film
+where release_year=(
+SELECT release_year
+from film
+order by (release_year) desc limit 1)
